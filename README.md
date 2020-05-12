@@ -1,3 +1,6 @@
+![Test](https://github.com/nielsrolf/pca/workflows/Test/badge.svg)
+![Lint](https://github.com/nielsrolf/pca/workflows/Lint/badge.svg)
+
 # Principal Component Analysis Using SVD
 
 I use PCA quite often, mainly for visualization. This little project is basically a class that I implemented way too often and that provides a nice API to fit PCA to data and use it.
