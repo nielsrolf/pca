@@ -2,7 +2,8 @@ from setuptools import setup, find_packages
 
 
 with open("requirements.txt", "r") as req_file:
-    requirements = [i.split(' ')[0] for i in req_file.readlines() if not i.startswith("#")]
+    requirements = [i.split(' ')[0]
+                    for i in req_file.readlines() if not i.startswith("#")]
 
 setup(
     name="pca",
