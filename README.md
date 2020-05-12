@@ -1,4 +1,5 @@
 ![Test](https://github.com/nielsrolf/pca/workflows/Test/badge.svg)
+[![codecov](https://codecov.io/gh/nielsrolf/pca/branch/master/graph/badge.svg)](https://codecov.io/gh/nielsrolf/pca)
 ![Lint](https://github.com/nielsrolf/pca/workflows/Lint/badge.svg)
 
 # Principal Component Analysis Using SVD
