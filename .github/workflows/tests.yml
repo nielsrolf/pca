@@ -14,7 +14,7 @@ jobs:
         python-version: 3.6
     - name: Generate coverage report
       run: |
-        python setup.py install
+        python setup.py develop
         pip install pytest
         pip install pytest-cov
         pytest --cov=pca --cov-report=xml --cov-report=term tests
