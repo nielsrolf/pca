@@ -69,3 +69,33 @@ class PCA():
         plt.xlabel("ndims")
         plt.ylabel("MSE(X, X_)")
         plt.show()
+
+
+class OnlinePCA(PCA):
+    def __init__(self, lr, t0, D):
+        self.lr = lr
+        self.t0 = t0
+        self.D = D
+        self.mean = np.zeros(D)
+        self.t = 0
+        self.vh = np.random.normal(0, 1, size=(D, D))
+        self.s = np.ones(D)
+        self.orthonormalize()
+        
+    def orthonormalize(self):
+        self.vh[0] = self.vh[0]/np.linalg.norm(self.vh[0])
+        for i in range(1, self.D):
+            self.vh[i] -= (self.vh[:i]@self.vh[i]*self.vh[:i]).sum(0)
+            self.vh[i] = self.vh[i]/np.linalg.norm(self.vh[i])
+    
+    def update(self, x):
+        # update mean
+        self.mean = (self.t*self.mean + x)/(self.t+1)
+        x = x - self.mean
+        lr = self.lr*(1/max(1, self.t-self.t0))
+        y = self.vh@x
+        self.vh += lr*y[...,None]*x[None]
+        self.orthonormalize()
+        s = np.abs(y)
+        self.s = (self.t*self.s + s)/(self.t+1)
+        self.t += 1
