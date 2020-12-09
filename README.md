@@ -10,7 +10,7 @@ I use PCA quite often, mainly for visualization. This little project is basicall
 
 ## Install
 ```
-python setup.py install  # or python setup.py develop
+pip install git+https://github.com/nielsrolf/pca
 ```
 
 ## Test
