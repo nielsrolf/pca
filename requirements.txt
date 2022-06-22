@@ -14,7 +14,7 @@ matplotlib==3.2.1
     # via -r requirements.in
 more-itertools==8.2.0
     # via pytest
-numpy==1.18.4
+numpy==1.22.0
     # via
     #   -r requirements.in
     #   matplotlib
